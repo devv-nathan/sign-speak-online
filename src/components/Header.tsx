@@ -21,7 +21,7 @@ const Header = () => {
 
   useEffect(() => {
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 10);
+      setIsScrolled(window.scrollY > 20);
     };
     
     window.addEventListener("scroll", handleScroll);
@@ -34,24 +34,24 @@ const Header = () => {
     <header
       className={cn(
         "fixed top-0 left-0 right-0 z-50 transition-all duration-300",
-        isScrolled ? "bg-white/90 backdrop-blur-sm shadow-sm" : "bg-transparent"
+        isScrolled ? "bg-background/80 backdrop-blur-lg border-b border-white/5 shadow-md shadow-blue-900/10" : "bg-transparent"
       )}
     >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center py-4">
+      <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-10">
+        <div className="flex justify-between items-center py-5">
           <div className="flex items-center">
-            <a href="#" className="gradient-text font-display font-bold text-xl">
+            <a href="#" className="gradient-text font-display font-bold text-2xl">
               Sign Language Translator
             </a>
           </div>
 
           {/* Desktop Navigation */}
-          <nav className="hidden md:flex items-center space-x-8">
+          <nav className="hidden md:flex items-center space-x-10">
             {navItems.map((item) => (
               <a
                 key={item.name}
                 href={item.href}
-                className="text-neutral-600 hover:text-blue-600 transition-colors font-medium relative after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-blue-500 hover:after:w-full after:transition-all after:duration-300"
+                className="text-blue-100/80 hover:text-blue-300 transition-colors font-medium text-lg relative after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-blue-400 hover:after:w-full after:transition-all after:duration-300"
               >
                 {item.name}
               </a>
@@ -60,13 +60,13 @@ const Header = () => {
 
           {/* Mobile menu button */}
           <button
-            className="md:hidden text-neutral-600 hover:text-blue-600 transition-colors p-2 rounded-md hover:bg-blue-50"
+            className="md:hidden text-blue-200 hover:text-blue-100 transition-colors p-2 rounded-md hover:bg-blue-800/20 border border-blue-500/20"
             onClick={toggleMenu}
             aria-expanded={isMenuOpen}
             aria-controls="mobile-menu"
           >
             <span className="sr-only">Open main menu</span>
-            <Menu size={24} />
+            <Menu size={28} />
           </button>
         </div>
 
@@ -74,14 +74,14 @@ const Header = () => {
         {isMenuOpen && (
           <div
             id="mobile-menu"
-            className="md:hidden bg-white/95 backdrop-blur-sm pb-4 animate-scale-in rounded-b-lg shadow-lg"
+            className="md:hidden glass-effect pb-6 animate-scale-in rounded-2xl shadow-lg shadow-blue-900/20 mb-4 border border-white/5"
           >
-            <div className="flex flex-col space-y-4 pt-2 pb-3">
+            <div className="flex flex-col space-y-1 pt-2 pb-3">
               {navItems.map((item) => (
                 <a
                   key={item.name}
                   href={item.href}
-                  className="text-neutral-600 hover:text-blue-600 hover:bg-blue-50 px-4 py-3 rounded-lg font-medium transition-colors"
+                  className="text-blue-100/80 hover:text-blue-200 hover:bg-blue-800/30 px-6 py-4 rounded-xl font-medium transition-colors text-lg"
                   onClick={() => setIsMenuOpen(false)}
                 >
                   {item.name}
