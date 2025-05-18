@@ -67,12 +67,16 @@ const Features = () => {
         
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mt-16">
           {features.map((feature, index) => (
-            <div key={index} className="border border-neutral-100 rounded-lg p-6 hover:shadow-md transition-shadow">
-              <div className="mb-4">
+            <div 
+              key={index} 
+              className="border border-neutral-100 rounded-xl p-6 bg-white hover:bg-gradient-to-br hover:from-blue-50 hover:to-blue-100/30 transition-all duration-300 hover:shadow-lg hover:-translate-y-1 reveal card-hover group"
+              style={{ animationDelay: `${index * 0.1}s` }}
+            >
+              <div className="mb-4 bg-blue-50 p-3 rounded-lg inline-block group-hover:scale-110 transition-transform group-hover:bg-blue-100">
                 {feature.icon}
               </div>
-              <h3 className="text-xl font-bold mb-3 text-blue-600">{feature.title}</h3>
-              <p className="text-neutral-700">{feature.description}</p>
+              <h3 className="text-xl font-bold mb-3 gradient-text">{feature.title}</h3>
+              <p className="text-neutral-700 group-hover:text-neutral-800 transition-colors">{feature.description}</p>
             </div>
           ))}
         </div>

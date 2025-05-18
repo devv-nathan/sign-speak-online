@@ -40,7 +40,7 @@ const Header = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center py-4">
           <div className="flex items-center">
-            <a href="#" className="text-blue-600 font-bold text-xl">
+            <a href="#" className="gradient-text font-display font-bold text-xl">
               Sign Language Translator
             </a>
           </div>
@@ -51,7 +51,7 @@ const Header = () => {
               <a
                 key={item.name}
                 href={item.href}
-                className="text-neutral-600 hover:text-blue-600 transition-colors font-medium"
+                className="text-neutral-600 hover:text-blue-600 transition-colors font-medium relative after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-blue-500 hover:after:w-full after:transition-all after:duration-300"
               >
                 {item.name}
               </a>
@@ -60,7 +60,7 @@ const Header = () => {
 
           {/* Mobile menu button */}
           <button
-            className="md:hidden text-neutral-600 hover:text-blue-600"
+            className="md:hidden text-neutral-600 hover:text-blue-600 transition-colors p-2 rounded-md hover:bg-blue-50"
             onClick={toggleMenu}
             aria-expanded={isMenuOpen}
             aria-controls="mobile-menu"
@@ -74,14 +74,14 @@ const Header = () => {
         {isMenuOpen && (
           <div
             id="mobile-menu"
-            className="md:hidden bg-white pb-4 animate-fade-in"
+            className="md:hidden bg-white/95 backdrop-blur-sm pb-4 animate-scale-in rounded-b-lg shadow-lg"
           >
             <div className="flex flex-col space-y-4 pt-2 pb-3">
               {navItems.map((item) => (
                 <a
                   key={item.name}
                   href={item.href}
-                  className="text-neutral-600 hover:text-blue-600 px-3 py-2 font-medium"
+                  className="text-neutral-600 hover:text-blue-600 hover:bg-blue-50 px-4 py-3 rounded-lg font-medium transition-colors"
                   onClick={() => setIsMenuOpen(false)}
                 >
                   {item.name}

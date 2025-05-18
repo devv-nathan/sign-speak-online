@@ -16,8 +16,8 @@ const Index = () => {
     
     // Intersection Observer for scroll animations
     const observerOptions = {
-      threshold: 0.1,
-      rootMargin: "0px 0px -50px 0px"
+      threshold: 0.15,
+      rootMargin: "0px 0px -100px 0px"
     };
     
     const observer = new IntersectionObserver((entries) => {
@@ -30,9 +30,8 @@ const Index = () => {
     }, observerOptions);
     
     // Select all elements to animate
-    const revealElements = document.querySelectorAll('.section-container > *:not(.absolute)');
+    const revealElements = document.querySelectorAll('.reveal');
     revealElements.forEach(el => {
-      el.classList.add('reveal');
       observer.observe(el);
     });
     

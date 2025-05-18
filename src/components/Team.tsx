@@ -37,23 +37,28 @@ const Team = () => {
         
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mt-16">
           {teamMembers.map((member, index) => (
-            <div key={index} className="flex flex-col items-center text-center">
-              <div className="w-40 h-40 rounded-full overflow-hidden mb-4">
+            <div 
+              key={index} 
+              className="flex flex-col items-center text-center reveal card-hover"
+              style={{ animationDelay: `${index * 0.1}s` }}
+            >
+              <div className="w-40 h-40 rounded-full overflow-hidden mb-4 shadow-md group hover:shadow-xl transition-all duration-300 hover:scale-105 relative">
+                <div className="absolute inset-0 bg-gradient-to-tr from-blue-500 to-blue-300 opacity-0 group-hover:opacity-20 transition-opacity"></div>
                 <img
                   src={member.image}
                   alt={member.name}
                   className="w-full h-full object-cover"
                 />
               </div>
-              <h3 className="text-xl font-bold mb-1 text-blue-600">{member.name}</h3>
-              <p className="text-sm font-medium text-neutral-500 mb-2">{member.role}</p>
+              <h3 className="text-xl font-bold mb-1 gradient-text">{member.name}</h3>
+              <p className="text-sm font-medium text-blue-500 mb-2">{member.role}</p>
               <p className="text-neutral-700 text-sm">{member.bio}</p>
             </div>
           ))}
         </div>
         
-        <div className="mt-20 bg-blue-50 p-8 rounded-lg">
-          <h3 className="text-2xl font-bold text-center mb-6">Project Acknowledgements</h3>
+        <div className="mt-20 bg-gradient-to-br from-blue-50 to-white p-8 rounded-xl shadow-sm reveal card-hover">
+          <h3 className="text-2xl font-bold text-center mb-6 gradient-text">Project Acknowledgements</h3>
           <div className="text-center">
             <p className="text-neutral-700 mb-4">
               This project was developed as part of the Senior Computer Science Capstone at University College.

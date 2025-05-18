@@ -1,4 +1,6 @@
 
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@400;500;600;700&family=Roboto+Mono&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -87,7 +89,7 @@
   }
 
   h1, h2, h3, h4 {
-    @apply font-semibold tracking-tight;
+    @apply font-display font-semibold tracking-tight;
   }
 
   h1 {
@@ -113,7 +115,12 @@
   }
   
   .section-title {
-    @apply text-3xl font-bold mb-8 text-center;
+    @apply text-3xl font-bold mb-8 text-center relative;
+  }
+  
+  .section-title::after {
+    content: '';
+    @apply block h-1 w-20 bg-gradient-to-r from-blue-500 to-blue-300 mx-auto mt-3 rounded-full;
   }
   
   .section-description {
@@ -128,6 +135,18 @@
   .reveal.active {
     @apply opacity-100;
     transform: translateY(0);
+  }
+  
+  .card-hover {
+    @apply transition-all duration-300 hover:shadow-lg hover:-translate-y-1;
+  }
+  
+  .gradient-text {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-blue-400;
+  }
+  
+  .glass-effect {
+    @apply bg-white/80 backdrop-blur-sm;
   }
 }
 
