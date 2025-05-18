@@ -28,7 +28,7 @@ const Team = () => {
   ];
 
   return (
-    <section id="team" className="bg-white py-24">
+    <section id="team" className="bg-background py-24">
       <div className="section-container">
         <h2 className="section-title">Our Team</h2>
         <p className="section-description">
@@ -51,20 +51,20 @@ const Team = () => {
                 />
               </div>
               <h3 className="text-xl font-bold mb-1 gradient-text">{member.name}</h3>
-              <p className="text-sm font-medium text-blue-500 mb-2">{member.role}</p>
-              <p className="text-neutral-700 text-sm">{member.bio}</p>
+              <p className="text-sm font-medium text-blue-400 mb-2">{member.role}</p>
+              <p className="text-blue-100/70 text-sm">{member.bio}</p>
             </div>
           ))}
         </div>
         
-        <div className="mt-20 bg-gradient-to-br from-blue-50 to-white p-8 rounded-xl shadow-sm reveal card-hover">
+        <div className="mt-20 glass-effect p-8 rounded-xl shadow-sm reveal card-hover">
           <h3 className="text-2xl font-bold text-center mb-6 gradient-text">Project Acknowledgements</h3>
           <div className="text-center">
-            <p className="text-neutral-700 mb-4">
+            <p className="text-blue-100/70 mb-4">
               This project was developed as part of the Senior Computer Science Capstone at University College.
               We'd like to thank our advisor, Dr. Emily Chen, for her invaluable guidance throughout the development process.
             </p>
-            <p className="text-neutral-700">
+            <p className="text-blue-100/70">
               Special thanks to the National Association of the Deaf for their consultation and feedback during our
               testing phase.
             </p>

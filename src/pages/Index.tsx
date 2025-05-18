@@ -34,26 +34,35 @@ const Index = () => {
       observer.observe(el);
     });
     
-    // Parallax effect for moving gradients
+    // Enhanced parallax effect for moving gradients
     const handleScroll = () => {
       const scrollY = window.scrollY;
       document.documentElement.style.setProperty('--scroll-y', `${scrollY}px`);
       
-      // Adjust opacity of background elements based on scroll
+      // Apply transformations to gradient elements based on scroll
       const gradientElements = document.querySelectorAll('.scroll-gradient');
-      gradientElements.forEach((el) => {
+      gradientElements.forEach((el, index) => {
         const element = el as HTMLElement;
+        const speed = index % 2 === 0 ? 0.05 : -0.05;
+        const yPos = -(scrollY * speed);
+        element.style.transform = `translateY(${yPos}px)`;
+        
+        // Dynamic opacity based on viewport position
         const rect = element.getBoundingClientRect();
         const windowHeight = window.innerHeight;
         
         if (rect.top < windowHeight && rect.bottom > 0) {
-          const opacity = 0.2 + (0.8 * (1 - (Math.abs(windowHeight/2 - rect.top) / windowHeight)));
-          element.style.opacity = opacity.toString();
+          const distanceFromCenter = Math.abs(windowHeight/2 - (rect.top + rect.height/2));
+          const maxDistance = windowHeight/2 + rect.height/2;
+          const opacity = 0.4 * (1 - (distanceFromCenter / maxDistance));
+          element.style.opacity = Math.max(0.1, opacity).toString();
         }
       });
     };
     
     window.addEventListener('scroll', handleScroll);
+    // Initial call to set positions
+    handleScroll();
     
     return () => {
       if (revealElements) {
@@ -69,10 +78,10 @@ const Index = () => {
       
       {/* Background Graphics */}
       <div className="fixed inset-0 pointer-events-none z-0 overflow-hidden">
-        <div className="graphic-dot w-96 h-96 top-1/4 -left-48 opacity-20"></div>
-        <div className="graphic-dot w-80 h-80 top-3/4 -right-36 opacity-15"></div>
-        <div className="graphic-circle w-[800px] h-[800px] top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2"></div>
-        <div className="graphic-circle w-[1200px] h-[1200px] top-2/3 left-1/4 opacity-10"></div>
+        <div className="graphic-dot w-96 h-96 top-1/4 -left-48 opacity-20 scroll-gradient"></div>
+        <div className="graphic-dot w-80 h-80 top-3/4 -right-36 opacity-15 scroll-gradient"></div>
+        <div className="graphic-circle w-[800px] h-[800px] top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2 scroll-gradient"></div>
+        <div className="graphic-circle w-[1200px] h-[1200px] top-2/3 left-1/4 opacity-10 scroll-gradient"></div>
         <div className="absolute top-0 left-0 right-0 h-20 bg-gradient-to-b from-background to-transparent z-10"></div>
         <div className="absolute bottom-0 left-0 right-0 h-20 bg-gradient-to-t from-background to-transparent z-10"></div>
       </div>

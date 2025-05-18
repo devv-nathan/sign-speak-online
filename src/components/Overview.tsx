@@ -24,7 +24,7 @@ const Overview = () => {
               Developed as part of our senior computer science project, this translator combines computer vision, machine learning, and natural language processing to create an intuitive and accurate translation experience.
             </p>
           </div>
-          <div className="glass-effect p-10 rounded-3xl shadow-lg reveal card-hover transition-all duration-500 border border-white/5 bg-gradient-to-br from-secondary/50 to-background moving-gradient">
+          <div className="glass-effect p-10 rounded-3xl shadow-lg reveal card-hover transition-all duration-500 border border-white/5 bg-secondary/30 backdrop-blur-sm">
             <h4 className="text-2xl font-semibold mb-8 gradient-text">Project Goals</h4>
             <ul className="space-y-6">
               {[
