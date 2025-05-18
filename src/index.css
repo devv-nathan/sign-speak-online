@@ -45,6 +45,8 @@
     --sidebar-accent-foreground: 210 40% 98%;
     --sidebar-border: 223 47% 21%;
     --sidebar-ring: 217 91% 60%;
+    
+    --scroll-y: 0px;
   }
 }
 
@@ -125,6 +127,12 @@
     animation: gradientMove 15s ease infinite;
   }
   
+  /* Section gradients that change on scroll */
+  .section-gradient {
+    @apply absolute inset-0 transition-opacity duration-1000;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  
   .section-divider {
     height: 6px;
     background: linear-gradient(90deg, transparent, rgba(59, 130, 246, 0.3), transparent);
@@ -181,4 +189,3 @@
 html {
   scroll-behavior: smooth;
 }
-

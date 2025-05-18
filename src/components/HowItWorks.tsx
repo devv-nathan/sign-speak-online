@@ -24,13 +24,15 @@ const HowItWorks = () => {
   ];
 
   return (
-    <section id="how-it-works" className="bg-gradient-to-b from-blue-50 to-white py-24 relative overflow-hidden">
-      <div className="absolute top-0 right-0 w-96 h-96 bg-blue-200 rounded-full mix-blend-multiply filter blur-3xl opacity-30"></div>
-      <div className="absolute bottom-0 left-0 w-96 h-96 bg-blue-100 rounded-full mix-blend-multiply filter blur-3xl opacity-30"></div>
+    <section id="how-it-works" className="bg-background py-24 relative overflow-hidden">
+      {/* Dynamic gradient background */}
+      <div className="absolute inset-0 bg-gradient-to-b from-purple-900/20 to-blue-900/20 section-gradient"></div>
+      <div className="absolute top-0 left-0 w-96 h-96 bg-purple-500/10 rounded-full mix-blend-screen filter blur-3xl opacity-30"></div>
+      <div className="absolute bottom-0 right-0 w-96 h-96 bg-blue-500/10 rounded-full mix-blend-screen filter blur-3xl opacity-30"></div>
       
       <div className="section-container relative z-10">
-        <h2 className="section-title">How It Works</h2>
-        <p className="section-description">
+        <h2 className="section-title text-foreground">How It Works</h2>
+        <p className="section-description text-blue-100/80">
           Our sign language translator uses a sophisticated pipeline of technologies to convert physical gestures into meaningful text.
         </p>
         
@@ -38,48 +40,48 @@ const HowItWorks = () => {
           {steps.map((step) => (
             <div 
               key={step.number} 
-              className="bg-white rounded-xl p-6 shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-2 reveal"
+              className="glass-effect rounded-xl p-6 shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-2 reveal"
             >
-              <div className="text-5xl font-bold text-blue-100 mb-4">{step.number}</div>
+              <div className="text-5xl font-bold text-blue-500/30 mb-4">{step.number}</div>
               <h3 className="text-xl font-bold gradient-text mb-3">{step.title}</h3>
-              <p className="text-neutral-700">{step.description}</p>
+              <p className="text-blue-100/70">{step.description}</p>
             </div>
           ))}
         </div>
         
-        <div className="mt-20 bg-white rounded-xl p-8 shadow-sm reveal card-hover">
+        <div className="mt-20 glass-effect rounded-xl p-8 shadow-sm reveal card-hover">
           <div className="flex flex-col lg:flex-row gap-8 items-center">
             <div className="lg:w-1/2">
               <h3 className="text-2xl font-bold mb-4 gradient-text">Technical Process</h3>
-              <p className="text-neutral-700 mb-4">
+              <p className="text-blue-100/70 mb-4">
                 The system employs a convolutional neural network (CNN) trained on over 10,000 sign language gestures. 
                 When a user signs, their movements are captured, preprocessed to enhance features, and fed into the model.
               </p>
-              <p className="text-neutral-700">
+              <p className="text-blue-100/70">
                 The translation process works continuously, analyzing frames at 30fps to catch dynamic gestures and subtle movements
                 that make up sign language communication.
               </p>
             </div>
-            <div className="lg:w-1/2 bg-gradient-to-br from-blue-50 to-blue-100 p-6 rounded-xl flex flex-col space-y-4">
+            <div className="lg:w-1/2 bg-gradient-to-br from-blue-900/30 to-purple-900/30 p-6 rounded-xl flex flex-col space-y-4">
               <div className="flex items-center group">
                 <div className="w-3 h-3 bg-blue-500 rounded-full mr-3 group-hover:scale-125 transition-transform"></div>
-                <p className="text-sm text-neutral-700 group-hover:text-blue-700 transition-colors">Hand detection and landmark identification</p>
+                <p className="text-sm text-blue-100/70 group-hover:text-blue-100 transition-colors">Hand detection and landmark identification</p>
               </div>
               <div className="flex items-center group">
                 <div className="w-3 h-3 bg-blue-500 rounded-full mr-3 group-hover:scale-125 transition-transform"></div>
-                <p className="text-sm text-neutral-700 group-hover:text-blue-700 transition-colors">Feature extraction from hand posture and movement</p>
+                <p className="text-sm text-blue-100/70 group-hover:text-blue-100 transition-colors">Feature extraction from hand posture and movement</p>
               </div>
               <div className="flex items-center group">
                 <div className="w-3 h-3 bg-blue-500 rounded-full mr-3 group-hover:scale-125 transition-transform"></div>
-                <p className="text-sm text-neutral-700 group-hover:text-blue-700 transition-colors">Classification through neural network processing</p>
+                <p className="text-sm text-blue-100/70 group-hover:text-blue-100 transition-colors">Classification through neural network processing</p>
               </div>
               <div className="flex items-center group">
                 <div className="w-3 h-3 bg-blue-500 rounded-full mr-3 group-hover:scale-125 transition-transform"></div>
-                <p className="text-sm text-neutral-700 group-hover:text-blue-700 transition-colors">Context-aware language modeling for improved accuracy</p>
+                <p className="text-sm text-blue-100/70 group-hover:text-blue-100 transition-colors">Context-aware language modeling for improved accuracy</p>
               </div>
               <div className="flex items-center group">
                 <div className="w-3 h-3 bg-blue-500 rounded-full mr-3 group-hover:scale-125 transition-transform"></div>
-                <p className="text-sm text-neutral-700 group-hover:text-blue-700 transition-colors">Text generation and optional text-to-speech conversion</p>
+                <p className="text-sm text-blue-100/70 group-hover:text-blue-100 transition-colors">Text generation and optional text-to-speech conversion</p>
               </div>
             </div>
           </div>

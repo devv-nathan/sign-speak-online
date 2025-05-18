@@ -58,10 +58,15 @@ const Features = () => {
   ];
 
   return (
-    <section id="features" className="bg-white py-24">
-      <div className="section-container">
-        <h2 className="section-title">Key Features</h2>
-        <p className="section-description">
+    <section id="features" className="bg-background py-24 relative overflow-hidden">
+      {/* Dynamic section background */}
+      <div className="absolute inset-0 bg-gradient-to-b from-blue-900/20 to-purple-900/30 section-gradient"></div>
+      <div className="absolute top-0 right-0 w-96 h-96 rounded-full bg-blue-500/5 blur-3xl"></div>
+      <div className="absolute bottom-0 left-0 w-96 h-96 rounded-full bg-purple-500/5 blur-3xl"></div>
+      
+      <div className="section-container relative z-10">
+        <h2 className="section-title text-foreground">Key Features</h2>
+        <p className="section-description text-blue-100/80">
           Our sign language translator comes equipped with powerful features designed to enhance accessibility and user experience.
         </p>
         
@@ -69,14 +74,14 @@ const Features = () => {
           {features.map((feature, index) => (
             <div 
               key={index} 
-              className="border border-neutral-100 rounded-xl p-6 bg-white hover:bg-gradient-to-br hover:from-blue-50 hover:to-blue-100/30 transition-all duration-300 hover:shadow-lg hover:-translate-y-1 reveal card-hover group"
+              className="glass-effect rounded-xl p-6 hover:bg-gradient-to-br hover:from-blue-800/30 hover:to-purple-900/30 transition-all duration-500 hover:shadow-lg hover:-translate-y-1 reveal card-hover group"
               style={{ animationDelay: `${index * 0.1}s` }}
             >
-              <div className="mb-4 bg-blue-50 p-3 rounded-lg inline-block group-hover:scale-110 transition-transform group-hover:bg-blue-100">
+              <div className="mb-4 bg-blue-900/30 p-3 rounded-lg inline-block group-hover:scale-110 transition-transform group-hover:bg-blue-800/50">
                 {feature.icon}
               </div>
               <h3 className="text-xl font-bold mb-3 gradient-text">{feature.title}</h3>
-              <p className="text-neutral-700 group-hover:text-neutral-800 transition-colors">{feature.description}</p>
+              <p className="text-blue-100/70 group-hover:text-blue-50/90 transition-colors">{feature.description}</p>
             </div>
           ))}
         </div>

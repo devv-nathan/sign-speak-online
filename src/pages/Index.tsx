@@ -34,7 +34,7 @@ const Index = () => {
       observer.observe(el);
     });
     
-    // Enhanced parallax effect for moving gradients
+    // Enhanced parallax effect and section-specific gradients
     const handleScroll = () => {
       const scrollY = window.scrollY;
       document.documentElement.style.setProperty('--scroll-y', `${scrollY}px`);
@@ -58,6 +58,23 @@ const Index = () => {
           element.style.opacity = Math.max(0.1, opacity).toString();
         }
       });
+      
+      // Dynamic section gradient colors
+      const sections = document.querySelectorAll('section');
+      sections.forEach((section) => {
+        const rect = section.getBoundingClientRect();
+        const windowHeight = window.innerHeight;
+        
+        // Only process visible sections
+        if (rect.top < windowHeight && rect.bottom > 0) {
+          const sectionGradient = section.querySelector('.section-gradient') as HTMLElement;
+          if (sectionGradient) {
+            const percentVisible = 1 - (Math.abs(windowHeight/2 - (rect.top + rect.height/2)) / (windowHeight + rect.height));
+            const opacity = Math.min(0.8, percentVisible * 1.5);
+            sectionGradient.style.opacity = opacity.toString();
+          }
+        }
+      });
     };
     
     window.addEventListener('scroll', handleScroll);
@@ -78,10 +95,16 @@ const Index = () => {
       
       {/* Background Graphics */}
       <div className="fixed inset-0 pointer-events-none z-0 overflow-hidden">
+        {/* Hero section gradient */}
+        <div className="absolute inset-0 opacity-40 bg-gradient-to-b from-blue-900 via-purple-900 to-blue-900 moving-gradient"></div>
+        
+        {/* Floating elements */}
         <div className="graphic-dot w-96 h-96 top-1/4 -left-48 opacity-20 scroll-gradient"></div>
         <div className="graphic-dot w-80 h-80 top-3/4 -right-36 opacity-15 scroll-gradient"></div>
         <div className="graphic-circle w-[800px] h-[800px] top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2 scroll-gradient"></div>
         <div className="graphic-circle w-[1200px] h-[1200px] top-2/3 left-1/4 opacity-10 scroll-gradient"></div>
+        
+        {/* Gradient overlays */}
         <div className="absolute top-0 left-0 right-0 h-20 bg-gradient-to-b from-background to-transparent z-10"></div>
         <div className="absolute bottom-0 left-0 right-0 h-20 bg-gradient-to-t from-background to-transparent z-10"></div>
       </div>

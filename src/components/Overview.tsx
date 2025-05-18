@@ -2,7 +2,7 @@
 const Overview = () => {
   return (
     <section id="overview" className="bg-background py-28 relative">
-      <div className="absolute inset-0 bg-gradient-to-b from-blue-900/5 to-background/80 moving-gradient pointer-events-none"></div>
+      <div className="absolute inset-0 bg-gradient-to-b from-blue-900/5 to-background/80 moving-gradient section-gradient"></div>
       
       {/* Subtle graphics */}
       <div className="absolute top-20 left-10 w-64 h-64 rounded-full border border-blue-500/10 opacity-50"></div>
@@ -24,7 +24,7 @@ const Overview = () => {
               Developed as part of our senior computer science project, this translator combines computer vision, machine learning, and natural language processing to create an intuitive and accurate translation experience.
             </p>
           </div>
-          <div className="glass-effect p-10 rounded-3xl shadow-lg reveal card-hover transition-all duration-500 border border-white/5 bg-secondary/30 backdrop-blur-sm">
+          <div className="glass-effect p-10 rounded-3xl shadow-lg reveal border border-white/5 bg-secondary/30 backdrop-blur-sm transform transition-all duration-500 hover:-translate-y-2 hover:shadow-xl">
             <h4 className="text-2xl font-semibold mb-8 gradient-text">Project Goals</h4>
             <ul className="space-y-6">
               {[
