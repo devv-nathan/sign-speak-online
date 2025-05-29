@@ -1,5 +1,6 @@
 # Sign Speak Online
 
+THIS IS A LANDING PAGE FOR THE MAJOR PROJECT :
 A web application for sign language translation and learning.
 
 ## Getting Started
