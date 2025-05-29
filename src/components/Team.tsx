@@ -57,7 +57,7 @@ const Team = () => {
           <div className="text-center">
             <p className="text-blue-100/70 mb-4">
               This project was developed as part of the Senior Computer Science Capstone at University College.
-              We'd like to thank our advisor, Dr. Emily Chen, for her invaluable guidance throughout the development process.
+              We'd like to thank our advisor, Dr. Deepa M, for her invaluable guidance throughout the development process.
             </p>
             <p className="text-blue-100/70">
               Special thanks to the National Association of the Deaf for their consultation and feedback during our
