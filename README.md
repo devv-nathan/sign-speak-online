@@ -3,7 +3,7 @@
 THIS IS A LANDING PAGE FOR THE MAJOR PROJECT :
 A web application for sign language translation and learning.
 
- 🚀 **[Live Website](signlanding.netlify.app)** 
+ 🚀 **[Live Website](https://signlanding.netlify.app)** 
 
 ## Getting Started
 
