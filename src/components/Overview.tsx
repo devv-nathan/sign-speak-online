@@ -21,7 +21,7 @@ const Overview = () => {
               Our project aims to create an accessible, real-time translation system that converts American Sign Language (ASL) gestures into text and speech, enabling seamless communication between deaf and hearing individuals.
             </p>
             <p className="text-xl text-blue-100/80">
-              Developed as part of our senior computer science project, this translator combines computer vision, machine learning, and natural language processing to create an intuitive and accurate translation experience.
+              Developed as part of our senior information science project, this translator combines computer vision, machine learning, and natural language processing to create an intuitive and accurate translation experience.
             </p>
           </div>
           <div className="glass-effect p-10 rounded-3xl shadow-lg reveal border border-white/5 bg-secondary/30 backdrop-blur-sm transform transition-all duration-500 hover:-translate-y-2 hover:shadow-xl">

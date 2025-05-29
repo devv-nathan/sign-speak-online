@@ -54,7 +54,7 @@ const HowItWorks = () => {
             <div className="lg:w-1/2">
               <h3 className="text-2xl font-bold mb-4 gradient-text">Technical Process</h3>
               <p className="text-blue-100/70 mb-4">
-                The system employs a convolutional neural network (CNN) trained on over 10,000 sign language gestures. 
+                The system employs redacted model trained on over 10,000 sign language gestures. 
                 When a user signs, their movements are captured, preprocessed to enhance features, and fed into the model.
               </p>
               <p className="text-blue-100/70">

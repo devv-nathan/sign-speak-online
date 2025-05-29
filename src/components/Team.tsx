@@ -2,29 +2,24 @@
 const Team = () => {
   const teamMembers = [
     {
-      name: "Alex Johnson",
-      role: "Project Lead & ML Engineer",
-      image: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=300&q=80",
-      bio: "Computer Science senior with focus on machine learning and computer vision."
+      name: "Nathan Rodrigues",
+      role: "Project Lead",
+      image: "/images/team/nathan.JPG",
+      bio: "Information Science student with focus on machine learning and computer vision."
     },
     {
-      name: "Taylor Rodriguez",
+      name: "Mayur Shet",
       role: "Frontend Developer",
-      image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=300&q=80",
-      bio: "HCI specialist building accessible and intuitive user interfaces."
+      image: "/images/team/mayur.jpg",
+      bio: "specialist in building accessible and intuitive user interfaces."
     },
     {
-      name: "Jordan Smith",
+      name: "Shaun Karkada",
       role: "Backend Developer",
-      image: "https://images.unsplash.com/photo-1607746882042-944635dfe10e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=300&q=80",
+      image: "/images/team/shaun.jpg",
       bio: "Systems architecture specialist focusing on scalable and efficient solutions."
     },
-    {
-      name: "Casey Wilson",
-      role: "Data Scientist",
-      image: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=300&q=80",
-      bio: "Applied mathematics background with expertise in neural networks and data analysis."
-    }
+
   ];
 
   return (

@@ -6,7 +6,7 @@ const TechStack = () => {
       items: [
         { name: "React", description: "UI component library" },
         { name: "TensorFlow.js", description: "Browser-based ML execution" },
-        { name: "WebRTC", description: "Camera access and streaming" },
+        
       ]
     },
     {
@@ -14,25 +14,24 @@ const TechStack = () => {
       items: [
         { name: "TensorFlow", description: "Neural network framework" },
         { name: "OpenCV", description: "Computer vision processing" },
-        { name: "LSTM Networks", description: "Sequence recognition" },
+        { name: "MediaPipe", description: "Sequence recognition" },
       ]
     },
     {
       category: "Backend",
       items: [
         { name: "Node.js", description: "Server runtime" },
-        { name: "Express", description: "Web framework" },
         { name: "MongoDB", description: "Data storage" },
       ]
     },
-    {
+  /*  {
       category: "DevOps",
       items: [
         { name: "Docker", description: "Containerization" },
         { name: "GitHub Actions", description: "CI/CD pipeline" },
         { name: "AWS", description: "Cloud hosting" },
       ]
-    }
+    }*/
   ];
 
   return (
